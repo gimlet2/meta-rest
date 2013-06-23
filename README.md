@@ -13,5 +13,6 @@ quite similar each other. For each resource you have to implement following:
 - DELETE some resource
 - define security policy for each resource
 - validate incoming data
+
 Most of this task have same solutions and development is starting remind "Groundhog Day" movie. This project initiated
 to simplify that.
