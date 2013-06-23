@@ -16,3 +16,7 @@ quite similar to each other. For each resource you have to implement following:
 
 Most of these tasks have the same solutions and development is starting to remind "Groundhog Day" movie. This project is initiated
 to simplify that situation.
+
+Each resource is defined by its properties. Instead of direct implementation of resource behavior in source code it could be 
+presented with the set of valuable properties. The sum of properties represents the entire REST service. This representation
+could be called meta-discription. Meta-discription could be defined with the JSON-document in language described below. 
