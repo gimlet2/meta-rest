@@ -1,4 +1,7 @@
-use meta_rest::{Field, Filter, InMemoryStorage, Resource, ResourceDefinition, ResourceManager, SecurityPolicy, ValidationRule};
+use meta_rest::{
+    Field, Filter, InMemoryStorage, Resource, ResourceDefinition, ResourceManager, SecurityPolicy,
+    ValidationRule,
+};
 use std::collections::HashMap;
 
 fn main() {
@@ -80,7 +83,8 @@ fn main() {
     }];
     let filtered = manager.list_filtered(&filters).unwrap();
     for user in &filtered {
-        println!("  - {} (age: {})", 
+        println!(
+            "  - {} (age: {})",
             user.data.get("name").unwrap().as_str().unwrap(),
             user.data.get("age").unwrap().as_f64().unwrap()
         );
@@ -92,7 +96,10 @@ fn main() {
     let updated_user = create_user("1", "Alice Johnson-Smith", 29.0, "alice.smith@example.com");
     manager.update("1", updated_user).unwrap();
     let user = manager.get("1").unwrap();
-    println!("Updated: {}\n", serde_json::to_string_pretty(&user).unwrap());
+    println!(
+        "Updated: {}\n",
+        serde_json::to_string_pretty(&user).unwrap()
+    );
 
     // DELETE - Remove a resource
     println!("Deleting user '3'...");
@@ -113,9 +120,18 @@ fn main() {
 
 fn create_user(id: &str, name: &str, age: f64, email: &str) -> Resource {
     let mut data = HashMap::new();
-    data.insert("name".to_string(), serde_json::Value::String(name.to_string()));
-    data.insert("age".to_string(), serde_json::Value::Number(serde_json::Number::from_f64(age).unwrap()));
-    data.insert("email".to_string(), serde_json::Value::String(email.to_string()));
+    data.insert(
+        "name".to_string(),
+        serde_json::Value::String(name.to_string()),
+    );
+    data.insert(
+        "age".to_string(),
+        serde_json::Value::Number(serde_json::Number::from_f64(age).unwrap()),
+    );
+    data.insert(
+        "email".to_string(),
+        serde_json::Value::String(email.to_string()),
+    );
 
     Resource {
         id: id.to_string(),
