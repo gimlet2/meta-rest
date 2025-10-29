@@ -1,6 +1,6 @@
 Meta-REST
 =========
-##Owerview##
+## Overview ##
 When a new idea comes to mind it's time to make the first prototype. And if that idea is about web it will definitely involve
 server side coding. One of the options is REST service. So service consists of the bunch of resources. And these resources are
 quite similar to each other. For each resource you have to implement following:
@@ -19,4 +19,4 @@ to simplify that situation.
 
 Each resource is defined by its properties. Instead of direct implementation of resource behavior in source code it could be 
 presented with the set of valuable properties. The sum of properties represents the entire REST service. This representation
-could be called meta-discription. Meta-discription could be defined with the JSON-document in language described below. 
+could be called meta-description. Meta-description could be defined with the JSON-document in language described below. 
